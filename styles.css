@@ -1,0 +1,113 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+body {
+	background: #212121;
+	color: #fff;
+	font-family: Poppins;
+}
+
+#quiz {
+	display: none;
+}
+
+ul {
+	padding: 0;
+	margin: 0;
+	list-style: none;
+	max-width: 45ch;
+}
+
+.imagens {
+	display: flex;
+	justify-content: space-around;
+	width: 100%;
+	align-items: center;
+	margin-top: 3rem;
+}
+
+img {
+	width: 400px;
+}
+
+.botoes {
+	position: fixed;
+	bottom: 1rem;
+	left: 50%;
+	transform: translateX(-50%);
+}
+
+#resposta p {
+	position: fixed;
+	font-size: 2rem;
+	left: 50%;
+	transform: translateX(-50%);
+	bottom: 5rem;
+	margin: 0;
+}
+
+.botoes button {
+	padding: 1rem;
+	border: none;
+	border-radius: 1rem;
+	cursor: pointer;
+}
+
+#pergunta, #resposta {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	align-items: center;
+}
+
+#pergunta {
+	height: 80vh;
+}
+
+#reposta {
+	height: 20vh;
+}
+
+p {
+	max-width: 45ch;
+}
+
+label {
+	cursor: pointer;
+}
+
+.botao-inicio {
+	display: block;
+	padding: 1rem;
+	margin: 1rem 0;
+	border: none;
+	cursor: pointer;
+	background-color: seagreen;
+	color: #fff;
+	border-radius: 1rem;
+}
+
+.botao-inicio:hover {
+	opacity: .75;
+}
+
+.configuracoes {
+	margin: 5rem auto;
+	width: 60%;
+}
+
+h2 {
+	color: orange;
+}
+
+h3 {
+	color: lightblue;
+}
+
+.negrito {
+	font-weight: bolder;
+	color: orange;
+}
+
+audio {
+	margin-bottom: 1rem;
+}

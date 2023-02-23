@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="description" content="Quiz configurável para estudar o Brasil e o mundo.">
+	<meta name="keywords" content="quiz, brasil, mundo, países, mapas, bandeiras, hinos">
+	<meta name="robots" content="index, follow">
+	<meta name="author" content="Pedro Borges">
+	<meta name="revisit-after" content="7 days">
+	<meta http-equiv="content-language" content="pt-BR">
+	<meta name="copyright" content="Pedro Borges">
+    <meta property="og:title" content="Pedro Borges">
+    <meta property="og:description" content="Quiz configurável para estudar o Brasil e o mundo.">
+	<meta property="og:image" content="icon.png">
+	<meta property="og:image:type" content="icon.png">
+	<meta property="og:image:width" content="250">
+	<meta property="og:image:height" content="250">
+	<meta property="og:type" content="website">
+    <meta property="twitter:title" content="Geo Quiz">
+    <meta property="twitter:description" content="Quiz configurável para estudar o Brasil e o mundo.">
+    <meta property="twitter:image" content="icon.png">
+    <meta property="twitter:card" content="summary_large_image">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Geo Quiz</title>
+	<link rel="stylesheet" type="text/css" href="styles.css">
+	<script type="text/javascript" src="dados.js" defer></script>
+	<script type="text/javascript" src="script.js" defer></script>
+	<link rel="icon" type="image/png" href="icon.png"/>
+</head>
+<body>
+
+<div class="configuracoes configuracoes-brasil">
+	<h2>Brasil</h2>
+	<h3>Perguntas</h3>
+	<input type="checkbox" class="config-pergunta" value="nome" data-nome-formatado="Nome" id="config-pergunta-nome"> <label for="config-pergunta-nome">Nome</label>
+	<input type="checkbox" class="config-pergunta" value="abreviacao" data-nome-formatado="Abreviação" id="config-pergunta-abreviacao"> <label for="config-pergunta-abreviacao">Abreviação</label>
+	<input type="checkbox" class="config-pergunta" value="capital" data-nome-formatado="Capital" id="config-pergunta-capital"> <label for="config-pergunta-capital">Capital</label>
+	<input type="checkbox" class="config-pergunta" value="gentilico" data-nome-formatado="Gentílico" id="config-pergunta-gentilico"> <label for="config-pergunta-gentilico">Gentílico</label>
+	<input type="checkbox" class="config-pergunta" value="area" data-nome-formatado="Área" id="config-pergunta-area"> <label for="config-pergunta-area">Área</label>
+	<input type="checkbox" class="config-pergunta" value="percentualTerritorial" data-nome-formatado="Percentual territorial" id="config-pergunta-percentual-territorial"> <label for="config-pergunta-percentual-territorial">Percentual territorial</label>
+	<input type="checkbox" class="config-pergunta" value="paisComparavel" data-nome-formatado="País comparável" id="config-pergunta-pais-comparavel"> <label for="config-pergunta-pais-comparavel">País comparável</label>
+	<input checked type="checkbox" class="config-pergunta" value="bandeira" data-nome-formatado="Bandeira" id="config-pergunta-bandeira"> <label for="config-pergunta-bandeira">Bandeira</label>
+	<input checked type="checkbox" class="config-pergunta" value="mapa" data-nome-formatado="Mapa" id="config-pergunta-mapa"> <label for="config-pergunta-mapa">Mapa</label>
+	<input type="checkbox" class="config-pergunta" value="brasao" data-nome-formatado="Brasão" id="config-pergunta-brasao"> <label for="config-pergunta-brasao">Brasão</label>
+	<input type="checkbox" class="config-pergunta" value="hino" data-nome-formatado="Hino" id="config-pergunta-hino"> <label for="config-pergunta-hino">Hino</label>
+
+	<h3>Respostas</h3>
+	<input checked type="checkbox" class="config-resposta" value="nome" data-nome-formatado="Nome" id="config-resposta-nome"> <label for="config-resposta-nome">Nome</label>
+	<input type="checkbox" class="config-resposta" value="abreviacao" data-nome-formatado="Abreviação" id="config-resposta-abreviacao"> <label for="config-resposta-abreviacao">Abreviação</label>
+	<input type="checkbox" class="config-resposta" value="capital" data-nome-formatado="Capital" id="config-resposta-capital"> <label for="config-resposta-capital">Capital</label>
+	<input type="checkbox" class="config-resposta" value="gentilico" data-nome-formatado="Gentílico" id="config-resposta-gentilico"> <label for="config-resposta-gentilico">Gentílico</label>
+	<input type="checkbox" class="config-resposta" value="area" data-nome-formatado="Área" id="config-resposta-area"> <label for="config-resposta-area">Área</label>
+	<input type="checkbox" class="config-resposta" value="percentualTerritorial" data-nome-formatado="Percentual territorial" id="config-resposta-percentual-territorial"> <label for="config-resposta-percentual-territorial">Percentual territorial</label>
+	<input type="checkbox" class="config-resposta" value="paisComparavel" data-nome-formatado="País comparável" id="config-resposta-pais-comparavel"> <label for="config-resposta-pais-comparavel">País comparável</label>
+	<input type="checkbox" class="config-resposta" value="bandeira" data-nome-formatado="Bandeira" id="config-resposta-bandeira"> <label for="config-resposta-bandeira">Bandeira</label>
+	<input type="checkbox" class="config-resposta" value="mapa" data-nome-formatado="Mapa" id="config-resposta-mapa"> <label for="config-resposta-mapa">Mapa</label>
+	<input type="checkbox" class="config-resposta" value="brasao" data-nome-formatado="Brasão" id="config-resposta-brasao"> <label for="config-resposta-brasao">Brasão</label>
+	<input type="checkbox" class="config-resposta" value="hino" data-nome-formatado="Hino" id="config-resposta-hino"> <label for="config-resposta-hino">Hino</label>
+
+	<button class="botao-inicio" id="btnJogarBrasil">Jogar: Brasil</button>
+</div>
+
+<div class="configuracoes configuracoes-mundo">
+	<h2>Mundo</h2>
+	<h3>Perguntas</h3>
+	<input type="checkbox" class="config-pergunta" value="nome" data-nome-formatado="Nome" id="mundo-config-pergunta-nome"> <label for="mundo-config-pergunta-nome">Nome</label>
+	<input checked type="checkbox" class="config-pergunta" value="bandeira" data-nome-formatado="Bandeira" id="mundo-config-pergunta-bandeira"> <label for="mundo-config-pergunta-bandeira">Bandeira</label>
+	<input checked type="checkbox" class="config-pergunta" value="mapa" data-nome-formatado="Mapa" id="mundo-config-pergunta-mapa"> <label for="mundo-config-pergunta-mapa">Mapa</label>
+	<input type="checkbox" class="config-pergunta" value="continente" data-nome-formatado="Continente" id="mundo-config-pergunta-continente"> <label for="mundo-config-pergunta-continente">Continente</label>
+	<input type="checkbox" class="config-pergunta" value="capital" data-nome-formatado="Capital" id="mundo-config-pergunta-capital"> <label for="mundo-config-pergunta-capital">Capital</label>
+	<input type="checkbox" class="config-pergunta" value="gentilico" data-nome-formatado="Gentílico" id="mundo-config-pergunta-gentilico"> <label for="mundo-config-pergunta-gentilico">Gentílico</label>
+	<input type="checkbox" class="config-pergunta" value="linguas" data-nome-formatado="Línguas" id="mundo-config-pergunta-linguas"> <label for="mundo-config-pergunta-linguas">Línguas</label>
+	<input type="checkbox" class="config-pergunta" value="formaConstitucional" data-nome-formatado="Forma constitucional" id="mundo-config-pergunta-formaConstitucional"> <label for="mundo-config-pergunta-formaConstitucional">Forma constitucional</label>
+	<input type="checkbox" class="config-pergunta" value="chefeDeEstado" data-nome-formatado="Chefe de Estado" id="mundo-config-pergunta-chefeDeEstado"> <label for="mundo-config-pergunta-chefeDeEstado">Chefe de Estado</label>
+	<input type="checkbox" class="config-pergunta" value="baseLegitimidadeExecutiva" data-nome-formatado="Base de legitimidade executiva" id="mundo-config-pergunta-baseLegitimidadeExecutiva"> <label for="mundo-config-pergunta-baseLegitimidadeExecutiva">Base de legitimidade executiva</label>
+	<input type="checkbox" class="config-pergunta" value="iso2" data-nome-formatado="ISO2" id="mundo-config-pergunta-iso2"> <label for="mundo-config-pergunta-iso2">ISO2</label>
+	<input type="checkbox" class="config-pergunta" value="iso3" data-nome-formatado="ISO3" id="mundo-config-pergunta-iso3"> <label for="mundo-config-pergunta-iso3">ISO3</label>
+	<input type="checkbox" class="config-pergunta" value="dominio" data-nome-formatado="Domínio" id="mundo-config-pergunta-dominio"> <label for="mundo-config-pergunta-dominio">Domínio</label>
+	<input type="checkbox" class="config-pergunta" value="ddi" data-nome-formatado="DDI" id="mundo-config-pergunta-ddi"> <label for="mundo-config-pergunta-ddi">DDI</label>
+	<input type="checkbox" class="config-pergunta" value="percentualCristao" data-nome-formatado="% Cristão" id="mundo-config-pergunta-percentualCristao"> <label for="mundo-config-pergunta-percentualCristao">% Cristão</label>
+	<input type="checkbox" class="config-pergunta" value="percentualMuculmano" data-nome-formatado="% Muçulmano" id="mundo-config-pergunta-percentualMuculmano"> <label for="mundo-config-pergunta-percentualMuculmano">% Muçulmano</label>
+	<input type="checkbox" class="config-pergunta" value="percentualHindu" data-nome-formatado="% Hindu" id="mundo-config-pergunta-percentualHindu"> <label for="mundo-config-pergunta-percentualHindu">% Hindu</label>
+	<input type="checkbox" class="config-pergunta" value="percentualBudista" data-nome-formatado="% Budista" id="mundo-config-pergunta-percentualBudista"> <label for="mundo-config-pergunta-percentualBudista">% Budista</label>
+	<input type="checkbox" class="config-pergunta" value="percentualJudaico" data-nome-formatado="% Judaico" id="mundo-config-pergunta-percentualJudaico"> <label for="mundo-config-pergunta-percentualJudaico">% Judaico</label>
+
+	<h3>Respostas</h3>
+	<input checked type="checkbox" class="config-resposta" value="nome" data-nome-formatado="Nome" id="mundo-config-resposta-nome"> <label for="mundo-config-resposta-nome">Nome</label>
+	<input type="checkbox" class="config-resposta" value="bandeira" data-nome-formatado="Bandeira" id="mundo-config-resposta-bandeira"> <label for="mundo-config-resposta-bandeira">Bandeira</label>
+	<input type="checkbox" class="config-resposta" value="mapa" data-nome-formatado="Mapa" id="mundo-config-resposta-mapa"> <label for="mundo-config-resposta-mapa">Mapa</label>
+	<input type="checkbox" class="config-resposta" value="continente" data-nome-formatado="Continente" id="mundo-config-resposta-continente"> <label for="mundo-config-resposta-continente">Continente</label>
+	<input type="checkbox" class="config-resposta" value="capital" data-nome-formatado="Capital" id="mundo-config-resposta-capital"> <label for="mundo-config-resposta-capital">Capital</label>
+	<input type="checkbox" class="config-resposta" value="gentilico" data-nome-formatado="Gentílico" id="mundo-config-resposta-gentilico"> <label for="mundo-config-resposta-gentilico">Gentílico</label>
+	<input type="checkbox" class="config-resposta" value="linguas" data-nome-formatado="Línguas" id="mundo-config-resposta-linguas"> <label for="mundo-config-resposta-linguas">Línguas</label>
+	<input type="checkbox" class="config-resposta" value="formaConstitucional" data-nome-formatado="Forma constitucional" id="mundo-config-resposta-formaConstitucional"> <label for="mundo-config-resposta-formaConstitucional">Forma constitucional</label>
+	<input type="checkbox" class="config-resposta" value="chefeDeEstado" data-nome-formatado="Chefe de Estado" id="mundo-config-resposta-chefeDeEstado"> <label for="mundo-config-resposta-chefeDeEstado">Chefe de Estado</label>
+	<input type="checkbox" class="config-resposta" value="baseLegitimidadeExecutiva" data-nome-formatado="Base de legitimidade executiva" id="mundo-config-resposta-baseLegitimidadeExecutiva"> <label for="mundo-config-resposta-baseLegitimidadeExecutiva">Base de legitimidade executiva</label>
+	<input type="checkbox" class="config-resposta" value="iso2" data-nome-formatado="ISO2" id="mundo-config-resposta-iso2"> <label for="mundo-config-resposta-iso2">ISO2</label>
+	<input type="checkbox" class="config-resposta" value="iso3" data-nome-formatado="ISO3" id="mundo-config-resposta-iso3"> <label for="mundo-config-resposta-iso3">ISO3</label>
+	<input type="checkbox" class="config-resposta" value="dominio" data-nome-formatado="Domínio" id="mundo-config-resposta-dominio"> <label for="mundo-config-resposta-dominio">Domínio</label>
+	<input type="checkbox" class="config-resposta" value="ddi" data-nome-formatado="DDI" id="mundo-config-resposta-ddi"> <label for="mundo-config-resposta-ddi">DDI</label>
+	<input type="checkbox" class="config-resposta" value="percentualCristao" data-nome-formatado="% Cristão" id="mundo-config-resposta-percentualCristao"> <label for="mundo-config-resposta-percentualCristao">% Cristão</label>
+	<input type="checkbox" class="config-resposta" value="percentualMuculmano" data-nome-formatado="% Muçulmano" id="mundo-config-resposta-percentualMuculmano"> <label for="mundo-config-resposta-percentualMuculmano">% Muçulmano</label>
+	<input type="checkbox" class="config-resposta" value="percentualHindu" data-nome-formatado="% Hindu" id="mundo-config-resposta-percentualHindu"> <label for="mundo-config-resposta-percentualHindu">% Hindu</label>
+	<input type="checkbox" class="config-resposta" value="percentualBudista" data-nome-formatado="% Budista" id="mundo-config-resposta-percentualBudista"> <label for="mundo-config-resposta-percentualBudista">% Budista</label>
+	<input type="checkbox" class="config-resposta" value="percentualJudaico" data-nome-formatado="% Judaico" id="mundo-config-resposta-percentualJudaico"> <label for="mundo-config-resposta-percentualJudaico">% Judaico</label>
+
+	<button class="botao-inicio" id="btnJogarMundo">Jogar: Mundo</button>
+</div>
+
+<div id="quiz">
+	<div id="pergunta">
+		<div class="imagens"></div>
+		<div class="audio"></div>
+		<ul class="texto"></ul>
+	</div>
+
+	<div id="resposta"></div>
+
+	<div class="botoes">
+		<button id="btnRevelarResposta">Revelar resposta</button>
+		<button id="btnDica">Dica</button>
+		<button id="btnProxima">Próxima</button>
+	</div>
+</div>
+
+<template id="templateAudio">
+	<audio controls>
+		<source src="yesterday.mp3" type="audio/mpeg">
+		Seu navegador não suporta arquivos de áudio.
+	</audio>
+</template>
+
+</body>
+</html>
