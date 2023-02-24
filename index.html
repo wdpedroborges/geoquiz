@@ -9,7 +9,7 @@
 	<meta name="revisit-after" content="7 days">
 	<meta http-equiv="content-language" content="pt-BR">
 	<meta name="copyright" content="Pedro Borges">
-    <meta property="og:title" content="Pedro Borges">
+    <meta property="og:title" content="Geo Quiz">
     <meta property="og:description" content="Quiz configurável para estudar o Brasil e o mundo.">
 	<meta property="og:image" content="icon.png">
 	<meta property="og:image:type" content="icon.png">
@@ -103,6 +103,15 @@
 	<input type="checkbox" class="config-resposta" value="percentualHindu" data-nome-formatado="% Hindu" id="mundo-config-resposta-percentualHindu"> <label for="mundo-config-resposta-percentualHindu">% Hindu</label>
 	<input type="checkbox" class="config-resposta" value="percentualBudista" data-nome-formatado="% Budista" id="mundo-config-resposta-percentualBudista"> <label for="mundo-config-resposta-percentualBudista">% Budista</label>
 	<input type="checkbox" class="config-resposta" value="percentualJudaico" data-nome-formatado="% Judaico" id="mundo-config-resposta-percentualJudaico"> <label for="mundo-config-resposta-percentualJudaico">% Judaico</label>
+
+	<h3>Limite continental</h3>
+	<select id="limiteContinental">
+		<option value="Sem limite" selected>Sem limite</option>
+		<option value="América">América</option>
+		<option value="Ásia">Ásia</option>
+		<option value="Europa">Europa</option>
+		<option value="Oceania">Oceania</option>
+	</select>
 
 	<button class="botao-inicio" id="btnJogarMundo">Jogar: Mundo</button>
 </div>

@@ -11,6 +11,7 @@ const btnJogarMundo = document.querySelector('#btnJogarMundo');
 const configuracoesBrasil = document.querySelector('.configuracoes-brasil');
 const configuracoesMundo = document.querySelector('.configuracoes-mundo');
 const quiz = document.querySelector('#quiz');
+const selectLimiteContinental = document.querySelector('#limiteContinental');
 
 const possibilidadesMundo = ['bandeira', 'mapa', 'continente', 'capital', 'gentilico', 'linguas', 'formaConstitucional', 'chefeDeEstado', 'baseLegitimidadeExecutiva', 'iso2', 'iso3', 'dominio', 'ddi', 'percentualCristao', 'percentualMuculmano', 'percentualHindu', 'percentualBudista', 'percentualJudaico', 'nome'];
 
@@ -53,11 +54,15 @@ mapDadosBrasil.set('hino', 'Hino');
 let respostaDada = false;
 let respostaAPergunta;
 let dadosPergunta = ['bandeira', 'mapa', 'hino'], dadosResposta = ['nome'];
-let limiteContinental = false;
+let limiteContinental = 'Sem limite';
 let listaPossibilidades = possibilidadesBrasil;
 let dicasDadas = [];
 let mapEscolhido = mapDadosBrasil;
 let dados = dadosBrasil;
+
+selectLimiteContinental.addEventListener('click', () => {
+	limiteContinental = selectLimiteContinental.value;
+});
 
 const aleatorio = (min, max) => {
        return Math.floor(Math.random() * (Math.floor(max) - Math.ceil(min) + 1)) + Math.ceil(min);
@@ -129,21 +134,23 @@ const criaPergunta = (dadosPergunta, dadosResposta) => {
 	respostaDada = false;
 	imagens.innerHTML = ''; audios.innerHTML = ''; textos.innerHTML = ''; resposta.textContent = '';
 
-	if (limiteContinental) {
+	if (limiteContinental !== "Sem limite") {
+		console.log('aqui');
 		do {
 			dadoEscolhido = aleatorioLista(dados);
-		} while(dadoEscolhido.continente !== limiteContinental && dadoEscolhido.nome === anterior);
+		} while((dadoEscolhido.continente !== limiteContinental) || (dadoEscolhido.nome === anterior) || elementoNaLista(dadoEscolhido.nome, respostas));
 	} else {
 		if (!anterior) {
 			dadoEscolhido = aleatorioLista(dados);
 		} else {
 			do {
 				dadoEscolhido = aleatorioLista(dados);
-			} while(dadoEscolhido.nome === anterior);
+			} while(dadoEscolhido.nome === anterior && elementoNaLista(dadoEscolhido.nome, respostas));
 		}
 	}
 
 	anterior = dadoEscolhido.nome;
+	respostas.push(anterior);
 
 	let infoPergunta = [];
 	for (let i = 0; i < dadosPergunta.length; i++) {
@@ -169,13 +176,14 @@ const criaPergunta = (dadosPergunta, dadosResposta) => {
 		}
 	}
 
-	respostas.push(infoResposta);
-
+	if (respostas.length === 20) {
+		respostas = [];
+	}
+	
 	return infoResposta;
 }
 
 btnRevelarResposta.addEventListener('click', () => {
-	console.log(respostaAPergunta);
 	if (!respostaDada) {
 		for (let i = 0; i < respostaAPergunta.length; i++) {
 			if (respostaAPergunta[i] && !Array.isArray(respostaAPergunta[i])) {
